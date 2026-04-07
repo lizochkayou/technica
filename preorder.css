@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+/* Стили для страницы предзаказа */
+.preorder-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.preorder-container {
+    background: #fff;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1000px;
+    box-shadow: 0 20px 50px rgba(108, 92, 231, 0.1);
+}
+
+.preorder-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fc;
+    border-radius: 20px;
+}
+
+.preorder-visual img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.preorder-details h1 {
+    font-size: 28px;
+    color: #6c5ce7;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.options-group {
+    margin-bottom: 30px;
+}
+
+.selector-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.size-btn {
+    padding: 10px 20px;
+    border: 2px solid #eee;
+    background: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.size-btn.active {
+    border-color: #6c5ce7;
+    color: #6c5ce7;
+    background: #f3f0ff;
+}
+
+.price-block {
+    margin-bottom: 30px;
+}
+
+.price-block span {
+    color: #888;
+    font-size: 14px;
+}
+
+#total-price {
+    font-size: 32px;
+    color: #222;
+}
+
+/* Адаптивность для мобильных */
+@media(max-width: 768px) {
+    .preorder-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* Контейнер карточки */
+.preorder-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(108, 92, 231, 0.15);
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+.product-gallery {
+    background: #f8f9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px;
+}
+
+.badge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: #6c5ce7;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.order-details {
+    padding: 50px;
+}
+
+.order-details h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #2d3436;
+}
+
+/* Сетки кнопок выбора */
+.config-section { margin-bottom: 25px; }
+.config-section label { display: block; margin-bottom: 12px; color: #636e72; font-weight: 500; }
+
+.model-grid, .storage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+}
+
+.model-btn, .storage-btn {
+    padding: 12px;
+    border: 2px solid #f1f2f6;
+    background: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.model-btn.active, .storage-btn.active {
+    border-color: #6c5ce7;
+    background: #f3f0ff;
+    color: #6c5ce7;
+}
+
+/* Цена */
+.final-price {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#display-price { font-size: 28px; color: #6c5ce7; }
+
+/* Красивая форма */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 18px 15px 10px;
+    border: 2px solid #f1f2f6;
+    border-radius: 15px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 18px;
+    color: #b2bec3;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+/* Эффект поднятия метки */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 5px;
+    font-size: 12px;
+    color: #6c5ce7;
+}
+.input-group input:focus { border-color: #6c5ce7; }
+
+.order-submit-btn {
+    width: 100%;
+    padding: 20px;
+    background: #6c5ce7;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
+
+.order-submit-btn:hover {
+    background: #5b4bc4;
+    transform: translateY(-3px);
+}
+/* Огромный заголовок ПРЕДЗАКАЗ 2026 */
+.preorder-hero {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #f3f0ff 0%, #ffffff 100%);
+}
+
+.preorder-main-label {
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(108, 92, 231, 0.05); /* Очень светлый текст на фоне */
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    letter-spacing: 10px;
+}
+
+/* Карточка предзаказа поверх фона */
+.preorder-card {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(108, 92, 231, 0.15);
+    overflow: hidden;
+}
+
+/* Стилизация формы внутри предзаказа */
+.styled-form .input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.styled-form input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.styled-form input:focus {
+    border-color: #6c5ce7;
+}
+
+/* Улучшение адаптивности */
+@media (max-width: 1000px) {
+    .preorder-main-label { font-size: 60px; top: 20px; }
+    .preorder-card { grid-template-columns: 1fr; }
+}
+header {
+    background: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 20px;
+    color: #6c5ce7;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #6c5ce7;
+}

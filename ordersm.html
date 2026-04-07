@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа | TechHome</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="logo">TechHome</div>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="smartphones.html">Каталог</a>
+        <a href="index.html#contacts">Контакты</a>
+    </nav>
+</header>
+
+<section class="contacts" style="min-height: 100vh;">
+    <div class="container">
+        <h2 class="contacts-title">Оформление заказа</h2>
+        
+        <div class="contacts-wrapper" id="order-main-content">
+            <div class="contacts-info">
+                <div class="category-card" style="background: #fff; padding: 20px; border-radius: 20px;">
+                    <img src="" alt="Телефон" id="display-img" style="max-width: 100%; height: 300px; object-fit: contain;">
+                    <h3 id="display-model" style="color: #222; margin-top: 15px;">Загрузка...</h3>
+                    <p id="display-price" style="font-size: 24px; font-weight: 700; color: #6c5ce7; margin-top: 10px;">0 ₽</p>
+                </div>
+            </div>
+
+            <div class="contacts-form">
+                <form id="checkout-form">
+                    <input type="text" id="client-name" placeholder="Ваше имя" required>
+                    <input type="tel" id="client-phone" placeholder="Ваш телефон" required>
+                    <button type="submit" id="submit-btn">Оформить заказ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="ordersm.js"></script>
+</body>
+</html>

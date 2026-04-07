@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление предзаказа iPhone 17</title>
+    <link rel="stylesheet" href="preorder.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="logo">TechHome</div>
+    <nav>
+        <a href="index.html#section">Каталог</a>
+        <a href="index.html#promo">Акции</a>
+        <a href="index.html#brands">Бренды</a>
+        <a href="index.html#contacts">Контакты</a>
+    </nav>
+</header>
+
+<section class="preorder-hero">
+    <div class="container">
+        <div class="preorder-main-label">ПРЕДЗАКАЗ 2026</div>
+        <article class="preorder-card" id="preorder-container">
+            <div class="product-gallery">
+                <img src="img/iphone17air.png" alt="iPhone" id="main-product-img">
+            </div>
+
+            <div class="order-details">
+                <h1>iPhone 17</h1>
+                
+                <div class="config-section">
+                    <label>Выберите вашу модель:</label>
+                    <div class="model-grid">
+                        <button class="model-btn active" data-model="iPhone 17 Air" data-img="img/iphone17air.png" data-base="71490">Air</button>
+                        <button class="model-btn" data-model="iPhone 17" data-img="img/iphone17.png" data-base="89990">iPhone</button>
+                        <button class="model-btn" data-model="iPhone 17 Pro" data-img="img/iphone17pro.png" data-base="115000">Pro</button>
+                        <button class="model-btn" data-model="iPhone 17 Pro Max" data-img="img/iphone17promax.png" data-base="130000">Pro Max</button>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <label>Объем памяти:</label>
+                    <div class="storage-grid">
+                        <button class="storage-btn active" data-extra="0">256 GB</button>
+                        <button class="storage-btn" data-extra="15000">512 GB</button>
+                        <button class="storage-btn" data-extra="35000">1 TB</button>
+                    </div>
+                </div>
+
+                <div class="final-price">
+                    <span>Итоговая стоимость:</span>
+                    <strong id="display-price">71 490 ₽</strong>
+                </div>
+
+                <form id="checkout-form" class="styled-form">
+                    <div class="input-group">
+                        <input type="text" id="client-name" placeholder=" " required>
+                        <label>Ваше имя</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="client-phone" placeholder=" " required>
+                        <label>Номер телефона</label>
+                    </div>
+                    <button type="submit" class="order-submit-btn">Забронировать</button>
+                </form>
+            </div>
+        </article>
+    </div>
+</section>
+<script src="preorder.js"></script>
+</body>
+</html>
