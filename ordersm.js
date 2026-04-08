@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     
-    // Получаем данные из ссылки
-    const model = params.get('model');
-    const priceParam = params.get('price'); // Тут должна быть цена
+    // Пытаемся получить данные (и для каталога, и для брендов)
+    // Если в ссылке "model" (каталог), берем её. Если нет, берем "name" (бренды).
+    const model = params.get('model') || params.get('name'); 
+    const priceParam = params.get('price');
     const img = params.get('img');
     const storage = params.get('storage');
 
@@ -14,27 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutForm = document.getElementById('checkout-form');
 
     if (model) {
-        // 1. Название (если есть доп. параметры - пишем в скобках)
+        // 1. Название (если есть объем памяти - пишем в скобках)
         displayModel.textContent = storage ? `${model} (${storage})` : model;
         
         // 2. Картинка
         if (img) displayImg.src = img;
 
-        // 3. ПРОВЕРКА ЦЕНЫ (Решаем проблему "Цена по запросу")
-        // Убираем всё лишнее, оставляем только цифры
-        let rawPrice = priceParam ? priceParam.replace(/\s/g, '') : "0";
+        // 3. Обработка цены (твоя надежная логика из каталога)
+        let rawPrice = priceParam ? String(priceParam).replace(/\s/g, '') : "0";
         let finalPrice = parseInt(rawPrice);
 
         if (!isNaN(finalPrice) && finalPrice > 0) {
-            // Форматируем красиво: 20 199 ₽
             displayPrice.textContent = finalPrice.toLocaleString('ru-RU') + ' ₽';
         } else {
-            // Если всё-таки пришел пустой параметр, попробуем вывести его как текст
             displayPrice.textContent = priceParam ? priceParam + ' ₽' : 'Уточняйте у менеджера';
         }
     }
 
-    // Обработка формы
+    // Твоя обработка формы (оставляем без изменений)
     if (checkoutForm) {
         checkoutForm.addEventListener('submit', (e) => {
             e.preventDefault();
